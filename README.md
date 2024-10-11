@@ -39,10 +39,7 @@ Place the dataset inside the `src/data/` directory with the name `results.csv`:
  
   ```bash
    npm install or yarn install
-
-
-  ```bash
-  run yarn start or npm run start
+   run yarn start or npm run start
 
 
  
