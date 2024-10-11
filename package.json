@@ -1,0 +1,33 @@
+{
+  "name": "football-predictions-tool",
+  "version": "1.0.0",
+  "description": "this is an AI Model to get football matches expectation result",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts --max-old-space-size=4096"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azizmobarak/ai-football-prediction.git"
+  },
+  "keywords": [
+    "ai",
+    "football",
+    "results",
+    "model",
+    "ai",
+    "model"
+  ],
+  "author": "aziz mobarak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azizmobarak/ai-football-prediction/issues"
+  },
+  "homepage": "https://github.com/azizmobarak/ai-football-prediction#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.21.0",
+    "csv-parser": "^3.0.0",
+    "typescript": "^5.6.3"
+  }
+}
