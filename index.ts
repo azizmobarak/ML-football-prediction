@@ -8,6 +8,7 @@ import { makePrediction, predictWinner } from './src/prediction';
     await initializeModelAndData().then(async result=>{
         console.log('get model and data...', result.dataLoaded.length);
         await trainModel(result.model, result.dataLoaded);
+        // makePrediction : use this instead for prediction caculation result in float
         const winner = predictWinner('Morocco', 'Qatar',result.model, result.dataLoaded);
         console.log('the winner is ::>> ', winner)
     });

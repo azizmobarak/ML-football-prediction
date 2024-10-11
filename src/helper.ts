@@ -4,10 +4,8 @@ const fs = require('fs');
 const path = require('path');
 const csv = require('csv-parser');
 
-// Ensure the correct file path
 const filePath = path.resolve(__dirname, 'data/results.csv');
 
-// Assuming you have a model function (like a database model)
 const processMatchData = (matchData: MatchData) => matchData;
 
 export const getData = async (): Promise<MatchData[]> => {
@@ -34,7 +32,7 @@ export const getData = async (): Promise<MatchData[]> => {
     })
     .on('error', (error: any) => {
         console.error('Error processing CSV file:', error);
-        reject(error);  // Reject the promise if there's an error
+        reject(error); 
     });
  }) 
 }

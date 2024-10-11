@@ -9,7 +9,6 @@ export const trainModel = async (model: tf.Sequential, dataLoaded: MatchData[]) 
     const xsTensor = tf.tensor2d(xs);
     const ysTensor = tf.tensor2d(ys, [ys.length, 1]);
 
-    // Train the model
     await model!.fit(xsTensor, ysTensor, {
         epochs: 100,
         shuffle: true,

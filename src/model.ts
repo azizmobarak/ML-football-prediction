@@ -5,7 +5,7 @@ import { MatchData } from './types';
 let dataLoaded: MatchData[] = [];
 let model: tf.Sequential | null = null;
 
-// create Prediction Model
+// Prediction Model
 export const createPredictionModel = (inputSize: number) => {
     const newModel = tf.sequential();
     newModel.add(tf.layers.dense({ units: 10, inputShape: [inputSize], activation: 'relu' }));
@@ -21,9 +21,8 @@ export const createPredictionModel = (inputSize: number) => {
 }
 
 
-export // Function to prepare the dataset for training
-const prepareData = (data: MatchData[]) => {
-    const teams = Array.from(new Set(data.map(match => match.home_team)));  // Unique teams for encoding
+export const prepareData = (data: MatchData[]) => {
+    const teams = Array.from(new Set(data.map(match => match.home_team)));
 
     const xs = data.map((match: MatchData) => [
         ...oneHotEncodeTeam(match.home_team, teams),
@@ -40,7 +39,7 @@ const prepareData = (data: MatchData[]) => {
 
 export const initializeModelAndData = async (): Promise<{model: tf.Sequential,dataLoaded: MatchData[] }> => {
     if (dataLoaded.length === 0) {
-        dataLoaded = await getData();  // Load data once
+        dataLoaded = await getData();
     }
 
     if (!model) {

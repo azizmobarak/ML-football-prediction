@@ -1,7 +1,7 @@
 {
   "name": "football-predictions-tool",
   "version": "1.0.0",
-  "description": "this is an AI Model to get football matches expectation result",
+  "description": "this is a Model to get football matches expectation result",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
