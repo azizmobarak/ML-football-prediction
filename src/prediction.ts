@@ -16,7 +16,7 @@ export const makePrediction = async(homeTeam: string, awayTeam: string, model: t
     prediction.print(); 
 }
 
-export const predictWinner = (homeTeam: string, awayTeam: string,model: tf.Sequential, dataLoaded: MatchData[]): string => {
+export const predictWinner = async(homeTeam: string, awayTeam: string,model: tf.Sequential, dataLoaded: MatchData[]): Promise<string> => {
     const teams = Array.from(new Set(dataLoaded.map(match => match.home_team)));
 
     const testMatch = [
@@ -26,7 +26,7 @@ export const predictWinner = (homeTeam: string, awayTeam: string,model: tf.Seque
     ];
 
     const prediction = model!.predict(tf.tensor2d([testMatch])) as tf.Tensor;
+    
     const predictionValue = prediction.dataSync()[0];  // Get the predicted value
-
-    return predictionValue > 0 ? homeTeam : awayTeam;
+    return predictionValue > 0.5 ? homeTeam : awayTeam;
 }

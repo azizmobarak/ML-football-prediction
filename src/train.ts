@@ -14,4 +14,5 @@ export const trainModel = async (model: tf.Sequential, dataLoaded: MatchData[]) 
         shuffle: true,
         callbacks: tf.callbacks.earlyStopping({ monitor: 'loss' })
     });
+    console.log('train the model finished ...')
 }
